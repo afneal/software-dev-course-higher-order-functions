@@ -92,19 +92,16 @@ Step-by-Step:
 2. Add only the prices of products where `inStock` is true.
 3. Store the total in a new variable.
 */
-let inStockTotal = products.reduce((acc, product) => {
-  if (product.inStock){
-    return acc + product.price;
-  }
-)
-//let inStockProducts = products.reduce((acc, num) => {return product ? acc + product.price : acc;},0);
-console.log(inStockProducts);
+let inStockProducts = products.filter((products) => products.inStock);
+let totalStock = inStockProducts.reduce((total, products) => total + products.price, 0);
+
+console.log(totalStock);
 
 // ============================================
 // 🧪 Console Test Your Work
 // ============================================
 
-// console.log("Filtered products:", ...);
-// console.log("Uppercased names:", ...);
-// console.log("Discounted products:", ...);
-// console.log("Total value in stock:", ...);
+console.log("Filtered products:", filterProducts);
+console.log("Uppercased names:", newProduct);
+console.log("Discounted products:", productPrices);
+console.log("Total value in stock:", totalStock);
